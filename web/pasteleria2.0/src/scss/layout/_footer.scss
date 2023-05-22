@@ -1,0 +1,81 @@
+.footer{
+    color: $marron;
+    font-family: 'Chewy', cursive;
+    background-color: $rosa;
+    
+    .contenedor-footer{
+        display: grid;
+        gap: 1rem;
+        align-items: center;
+        @include tablet{
+            gap: 0;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    
+    .copyright {
+        
+        grid-column: 1/2;
+        grid-row: 1;
+        text-transform: uppercase;
+        @include tablet{
+            flex-basis: calc(60% - 1rem);
+            display: flex;
+            justify-content: center;
+        }
+        p{
+            font-size: 1.5rem;
+            @include desktop{
+                font-size: 2rem;
+            }
+        }
+    }
+    .derecha{
+        grid-column: 2/3;
+        grid-row: 1;
+        display: grid;
+        @include tablet{
+            display: flex;
+            flex-basis: calc(40% - 1rem);
+        }
+        .social{
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+            @include tablet{
+                flex-basis: calc(40% - 1rem);
+            }
+            img{
+                width: 20%;
+                @include tablet{
+                    width: 15%;
+                }
+                @include desktop{
+                    transition: width .5s;
+                    &:hover{
+                        cursor: pointer;
+                        width: 20%;
+                        
+                    }
+                }
+            }
+        }
+        .telefono{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p{
+                margin: 0;
+                font-size: 1.5rem;
+                @include desktop{
+                    font-size: 2rem;
+                }
+            }
+            
+        }
+    }
+}
+

@@ -1,0 +1,19 @@
+{
+    "name": "mlain/pasteleria",
+    "description": "Proyecto de fin de grado Marta Lainez",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+        "MVC\\" : "./",
+        "Controllers\\" : "./controllers",
+        "Model\\" : "./models"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marta Lainez",
+            "email": "aa21.mlainez83@iespabloserrano.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,11 @@
+.header{
+    background-color: $rosa;
+    font-family: 'Chewy', cursive;
+    font-size: 1.75rem;
+    @include tablet{
+        font-size: 2.5rem;
+    }
+    @include desktop{
+        font-size: 3.5rem;
+    }
+}

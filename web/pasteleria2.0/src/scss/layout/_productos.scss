@@ -1,0 +1,86 @@
+.productos{
+    display: grid;
+    .producto1{
+        grid-row: 1;
+        grid-column: 1/2;
+    }
+    .producto2{
+        grid-row: 1;
+        grid-column: 2/3;
+        .brownies-icono{
+            @include desktop{
+                width: 65%;
+            }
+        }
+    }
+    .producto3{
+        grid-row: 2;
+        grid-column: 1/2;
+        @include desktop{
+            grid-row: 1;
+            grid-column: 3/4;
+            .dulces-icono{
+                width: 75%;
+            }
+        }
+    }
+    .producto4{
+        grid-row: 2;
+        grid-column: 2/3;
+        @include desktop{
+            grid-column: 1/2;
+        }
+    }
+    .producto5{
+        grid-row: 3;
+        grid-column: 1/2;
+        @include desktop{
+            grid-row: 2;
+            grid-column: 2/3;
+            .magdalenas-icono{
+                width: 65%;
+            }
+        }
+    }
+    .producto6{
+        grid-row: 3;
+        grid-column: 2/3;
+        @include desktop{
+            grid-row: 2;
+            grid-column: 3/4;
+            .panes-icono{
+                width: 73%;
+            }
+        }
+    }
+    .producto {
+        p{
+        font-size: 2rem;
+        text-align: center;
+        color: $marron;
+        margin: 0 0;
+        padding-bottom: 2rem;
+        }
+        a{
+            display: flex;
+            justify-content: center;
+            img{
+                @include desktop{
+                    width: 70%;
+                }
+            }
+        }
+        img{
+            @include desktop{
+                width: 70%;
+            }
+        }
+    }
+}
+.mas_pequeño{
+    width:89%;
+    @include tablet{
+        width: 95%;
+    }
+    
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Y Fantasía</title>
+    <!-- Agrego hoja de estilos -->
+    <link rel="stylesheet" href="build/css/app.css">
+    <!-- Fuente Chewy de google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor contenido-header"> <!-- Para centrar el contenido -->
+            <div class="barra">
+                <a href="/">
+                    <img class="logo" src="build/img/logo.svg" alt="Logotipo de Sabor y Fantasía">
+                </a>
+                <nav class="navegacion">
+                    <a href="index.html">Inicio</a>
+                    <a class="seleccionado" href="productos.html">Productos</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="cuenta.html">Cuenta</a>
+                    <a href="carrito.html">
+                        <img class="carrito" src="build/img/carrito.svg" alt="Carrito">
+                    </a>
+                </nav>
+
+            </div>
+
+            
+        </div><!-- .Barra -->
+
+    </header>
+
+    <main class="contenedor seccion">
+        <h1>Tartas</h1>
+        <div class="contenedor">
+            <div class="bloque-producto">
+                <img class="producto-imagen" src="build/img/Cheesecake.svg" alt="Tarta de queso">
+                <div class="producto-descripcion">
+                    <h2>Tarta de queso</h2>
+                    <p>
+                        La tarta de queso es una deliciosa creación que combina a la perfección la suavidad y el sabor único del queso con una base crujiente de galleta. Elaborada con una cuidadosa selección de quesos de alta calidad, cada bocado de esta irresistible tarta es una experiencia de placer para los amantes del queso. Su textura suave y sedosa se fusiona con un ligero toque de vainilla, creando un sabor cremoso y ligeramente dulce que te cautivará. La base de galleta crujiente aporta un contraste perfecto, mientras que su presentación elegante la convierte en la elección ideal para sorprender a tus invitados.
+                    </p>
+                </div>
+                <div class="bloque-precio">
+                    <h3 class="precio">15€</h3>
+                    <input class="cantidad" type="number" placeholder="Cantidad" min="1">
+                    <input class="submit" type="submit" value="Agregar al carrito">
+                </div>
+            </div><!-- .bloque-producto -->
+            <div class="bloque-producto">
+                <img class="producto-imagen" src="build/img/Marble-Cake.svg" alt="Tarta de queso">
+                <div class="producto-descripcion">
+                    <h2>Tarta de mármol</h2>
+                    <p>
+                        La tarta de mármol es una exquisita creación de la repostería que combina dos sabores clásicos en una sola tarta. Esta delicia presenta una combinación perfecta de suaves capas de bizcocho de vainilla y chocolate entrelazadas, creando un efecto marmolado irresistible. Cada bocado de esta tentadora tarta te sorprenderá con una explosión de sabores y una textura esponjosa. Decorada con un glaseado o espolvoreada con azúcar en polvo, la tarta de mármol es un verdadero deleite visual y gustativo. Es perfecta para cualquier ocasión especial o simplemente para disfrutar de un dulce capricho en cualquier momento del día.
+                    </p>
+                </div>
+                <div class="bloque-precio">
+                    <h3 class="precio">18€</h3>
+                    <input class="cantidad" type="number" placeholder="Cantidad" min="1">
+                    <input class="submit" type="submit" value="Agregar al carrito">
+                </div>
+            </div><!-- .bloque-producto -->
+            <div class="bloque-producto">
+                <img class="producto-imagen" src="build/img/Pumpkin-pie-feature-new.svg" alt="Tarta de queso">
+                <div class="producto-descripcion">
+                    <h2>Tarta de calabaza</h2>
+                    <p>
+                        La tarta de queso es una deliciosa creación que combina a la perfección la suavidad y el sabor único del queso con una base crujiente de galleta. Elaborada con una cuidadosa selección de quesos de alta calidad, cada bocado de esta irresistible tarta es una experiencia de placer para los amantes del queso. Su textura suave y sedosa se fusiona con un ligero toque de vainilla, creando un sabor cremoso y ligeramente dulce que te cautivará. La base de galleta crujiente aporta un contraste perfecto, mientras que su presentación elegante la convierte en la elección ideal para sorprender a tus invitados.
+                    </p>
+                </div>
+                <div class="bloque-precio">
+                    <h3 class="precio">13€</h3>
+                    <input class="cantidad" type="number" placeholder="Cantidad" min="1">
+                    <input class="submit" type="submit" value="Agregar al carrito">
+                </div>
+            </div><!-- .bloque-producto -->
+        </div>
+    </main>
+
+    <footer class="footer seccion">
+        <div class="contenedor contenedor-footer">
+            <div class="copyright">
+                <p>Copyright &copy; 2023 sabor y fantasía | privacy policy</p>
+            </div>
+            <div class="derecha">
+                <div class="social">
+                    <img class="red-social" src="build/img/instagram.svg" alt="Instagram">
+                    <img class="red-social" src="build/img/twitter.svg" alt="Twitter">
+                    <img class="red-social" src="build/img/facebook.svg" alt="Facebook">
+                </div>
+                <div class="telefono">
+                    <p>+34 976 45 45 45</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </footer>
+
+    <!-- Agrego modernizer para identificar si el pc soporta ciertas características como webp -->
+    <script src="build/js/bundle.min.js"></script>
+</body>
+</html>
