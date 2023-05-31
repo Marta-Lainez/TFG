@@ -30,16 +30,17 @@
             border: none;
             padding: 2rem;
         }
-        .submit{
-            background-color: $rosa;
-            border: none;
-            padding: 2rem;
-            transition: filter .4s ease;
-            &:hover {
-                cursor: pointer;
-                filter: brightness(0.9);
-            }
-        }
+        
     }
     
+}
+.submit{
+    background-color: $rosa;
+    border: none;
+    padding: 2rem;
+    transition: filter .4s ease;
+    &:hover {
+        cursor: pointer;
+        filter: brightness(0.9);
+    }
 }

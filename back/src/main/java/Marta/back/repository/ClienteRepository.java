@@ -13,4 +13,5 @@ public interface ClienteRepository extends JpaRepository<Cliente,Long> {
 
     @Query(value = "SELECT c FROM Cliente c WHERE c.id = ?1")
     Cliente consultarClienteId(long id);
+
 }
