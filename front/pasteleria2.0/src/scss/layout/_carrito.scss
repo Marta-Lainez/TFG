@@ -1,0 +1,23 @@
+
+.carrito-productos{
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  align-items: center;
+}
+.producto-carrito{
+  
+  width: 70%;
+  margin: 0 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+  img{
+    width: 20%;
+  }
+}
+.carrito-total{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <header class="header">
         <div class="contenedor contenido-header"> <!-- Para centrar el contenido -->
@@ -23,23 +25,29 @@
                 <nav class="navegacion">
                     <a href="index.html">Inicio</a>
                     <a href="productos.html">Productos</a>
-                    <a  href="contacto.html">Contacto</a>
+                    <a href="contacto.html">Contacto</a>
                     <a href="cuenta.html">Cuenta</a>
-                    <a class="seleccionado seleccionado-carrito"href="carrito.html">
+                    <a class="seleccionado seleccionado-carrito" href="carrito.html">
                         <img class="carrito" src="build/img/carrito.svg" alt="Carrito">
                     </a>
                 </nav>
 
             </div>
 
-            
+
         </div><!-- .Barra -->
 
     </header>
 
     <main class="contenedor seccion">
-        <h1>Carrito</h1>
-            
+        <h1>Carrito de compras</h1>
+        <div id="carrito-productos" class="carrito-productos">
+            <!-- Contenido del carrito de compras -->
+        </div>
+        <div class="carrito-total">
+            <h3>Total: <span id="total">0.00€</span></h3>
+            <button id="vaciar-carrito" class="submit">Vaciar carrito</button>
+        </div>
     </main>
 
     <footer class="footer seccion">
@@ -57,12 +65,134 @@
                     <p>+34 976 45 45 45</p>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </footer>
 
     <!-- Agrego modernizer para identificar si el pc soporta ciertas características como webp -->
     <script src="build/js/bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function agregarAlCarrito(e) {
+                const producto = {
+                    imagen: e.target.getAttribute("data-imagen"),
+                    titulo: e.target.getAttribute("data-titulo"),
+                    precio: e.target.getAttribute("data-precio"),
+                    cantidad: 1
+                };
+
+                let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+                const productoExistente = productosCarrito.find(function(p) {
+                    return p.titulo === producto.titulo;
+                });
+
+                if (productoExistente) {
+                    productoExistente.cantidad += 1;
+                } else {
+                    productosCarrito.push(producto);
+                }
+
+                localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+                mostrarProductosCarrito();
+            }
+
+            function mostrarProductosCarrito() {
+                const contenedorCarrito = document.querySelector("#carrito-productos");
+                const productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+
+                contenedorCarrito.innerHTML = "";
+
+                if (productosCarrito.length === 0) {
+                    contenedorCarrito.innerHTML = "<p>No hay productos en el carrito.</p>";
+                    document.querySelector("#total").textContent = "0.00€";
+                    return;
+                }
+
+                let precioTotal = 0;
+
+                productosCarrito.forEach(function(producto) {
+                    const { imagen, titulo, precio, cantidad } = producto;
+
+                    const productoDiv = document.createElement("div");
+                    productoDiv.classList.add("producto-carrito");
+
+                    const contenidoProducto = `
+                        <img src="${imagen}" alt="${titulo}" class="imagen-producto-carrito">
+                        <div class="info-producto-carrito">
+                            <h2>${titulo}</h2>
+                            <span class="precio-producto-carrito">${precio}</span>
+                            <input type="number" class="cantidad-producto-carrito" min="0" value="${cantidad}">
+                        </div>
+                        <button class="eliminar-producto submit" data-titulo="${titulo}">Eliminar</button>
+                    `;
+
+                    productoDiv.innerHTML = contenidoProducto;
+                    contenedorCarrito.appendChild(productoDiv);
+
+                    // Sumar al precio total
+                    const precioNumerico = parseFloat(precio.replace("€", ""));
+                    precioTotal += precioNumerico * cantidad;
+                });
+
+                // Mostrar el precio total
+                const precioTotalElement = document.querySelector("#total");
+                precioTotalElement.textContent = precioTotal.toFixed(2) + "€";
+
+                const botonesEliminar = document.querySelectorAll(".eliminar-producto");
+                botonesEliminar.forEach(function(boton) {
+                    boton.addEventListener("click", eliminarProducto);
+                });
+            }
+
+            function actualizarCantidad(e) {
+                const titulo = e.target.getAttribute("data-titulo");
+                const nuevaCantidad = parseInt(e.target.value);
+
+                let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+
+                productosCarrito = productosCarrito.map(function(producto) {
+                    if (producto.titulo === titulo) {
+                        producto.cantidad = nuevaCantidad;
+                    }
+                    return producto;
+                });
+
+                localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+
+                mostrarProductosCarrito();
+            }
+
+            function eliminarProducto(e) {
+                const titulo = e.target.getAttribute("data-titulo");
+                let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+
+                productosCarrito = productosCarrito.filter(function(producto) {
+                    return producto.titulo !== titulo;
+                });
+
+                localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+
+                mostrarProductosCarrito();
+            }
+
+            function vaciarCarrito() {
+                localStorage.removeItem("productosCarrito");
+                mostrarProductosCarrito();
+            }
+
+            const botonesAgregar = document.querySelectorAll(".submit");
+            botonesAgregar.forEach(function(boton) {
+                boton.addEventListener("click", agregarAlCarrito);
+            });
+
+            const botonVaciarCarrito = document.querySelector("#vaciar-carrito");
+            botonVaciarCarrito.addEventListener("click", vaciarCarrito);
+
+            mostrarProductosCarrito();
+        });
+    </script>
+
 </body>
+
 </html>

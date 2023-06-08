@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <header class="header">
         <div class="contenedor contenido-header"> <!-- Para centrar el contenido -->
@@ -32,56 +34,80 @@
 
             </div>
 
-            
+
         </div><!-- .Barra -->
 
     </header>
 
     <main class="contenedor seccion">
         <h1>Brownies</h1>
-        <div class="contenedor">
+        <div id="productos" class="contenedor contenedor-productos">
             <div class="bloque-producto">
-                <img class="producto-imagen" src="build/img/Peanut-Butter-Brownies-Feature-360x495.svg" alt="Tarta de queso">
+                <img class="imagen-producto" src="build/img/Peanut-Butter-Brownies-Feature-360x495.svg"
+                    alt="Brownie de chocolate y caramelo">
                 <div class="producto-descripcion">
                     <h2>Brownie de chocolate y caramelo</h2>
                     <p>
-                        El brownie de chocolate y caramelo es una combinación celestial que cautivará tus papilas gustativas. Este exquisito postre une la riqueza del chocolate con la dulzura del caramelo, creando una experiencia de sabor verdaderamente indulgente. Cada bocado de este brownie es una mezcla perfecta de textura suave y húmeda, con trozos de chocolate derretido y remolinos de caramelo que se funden en tu boca. El contraste entre el intenso sabor del chocolate y el dulzor caramelizado te transportará a un estado de absoluta satisfacción. Decora tu brownie con una pizca de sal marina o una bola de helado de vainilla para llevarlo al siguiente nivel de delicioso.
+                        El brownie de chocolate y caramelo es una combinación celestial que cautivará tus papilas
+                        gustativas. Este exquisito postre une la riqueza del chocolate con la dulzura del caramelo,
+                        creando una experiencia de sabor verdaderamente indulgente. Cada bocado de este brownie es una
+                        mezcla perfecta de textura suave y húmeda, con trozos de chocolate derretido y remolinos de
+                        caramelo que se funden en tu boca. El contraste entre el intenso sabor del chocolate y el dulzor
+                        caramelizado te transportará a un estado de absoluta satisfacción. Decora tu brownie con una
+                        pizca de sal marina o una bola de helado de vainilla para llevarlo al siguiente nivel de
+                        delicioso.
                     </p>
                 </div>
                 <div class="bloque-precio">
-                    <h3 class="precio">15€</h3>
-                    <input class="cantidad" type="number" placeholder="Cantidad" min="1">
-                    <input class="submit" type="submit" value="Agregar al carrito">
+                    <h3 class="precio-producto">12.99€</h3>
+                    <button class="agregar-carrito submit"
+                        data-producto='{"imagen": "build/img/Peanut-Butter-Brownies-Feature-360x495.svg", "titulo": "Brownie de chocolate y caramelo", "precio": "12.99€"}'>Añadir
+                        al carrito</button>
                 </div>
-            </div><!-- .bloque-producto -->
-            <div class="bloque-producto">
-                <img class="producto-imagen" src="build/img/brownies-choco.svg" alt="Tarta de queso">
-                <div class="producto-descripcion">
-                    <h2>Brownie de chocolate</h2>
-                    <p>
-                        El brownie de chocolate es una verdadera indulgencia para los amantes del chocolate. Con su exterior crujiente y su interior denso y lleno de sabor, cada mordisco es una explosión de chocolate puro. Este delicioso postre combina la riqueza del cacao con trozos de chocolate fundido, creando una experiencia irresistible para los sentidos. Su textura jugosa y su sabor intenso te transportarán a un paraíso chocolatoso. Puedes disfrutarlo solo, acompañado de una bola de helado o incluso con un toque de nueces o caramelo. El brownie de chocolate es el placer culpable perfecto para cualquier ocasión, desde una tarde de café hasta una celebración especial.
-                    </p>
-                </div>
-                <div class="bloque-precio">
-                    <h3 class="precio">18€</h3>
-                    <input class="cantidad" type="number" placeholder="Cantidad" min="1">
-                    <input class="submit" type="submit" value="Agregar al carrito">
-                </div>
-            </div><!-- .bloque-producto -->
-            <div class="bloque-producto">
-                <img class="producto-imagen" src="build/img/Carmelitas-Feature-360x495.svg" alt="Tarta de queso">
-                <div class="producto-descripcion">
-                    <h2>Carmelitas</h2>
-                    <p>
-                        Deliciosos y tentadores, nuestros brownies carmelitas son el sueño hecho realidad para los amantes del chocolate y el caramelo. Cada bocado te transporta a una experiencia celestial de sabor y textura. Nuestra receta especial combina una base de brownie de chocolate decadente y húmedo, con un relleno generoso de caramelo suave y cremoso que se derrite en tu boca. Para coronar esta maravilla, añadimos una capa crujiente de galleta en la parte superior, aportando un contraste perfecto de texturas. Cada mordisco es una explosión de sabores: el intenso chocolate, el dulce caramelo y el crujiente de la galleta se combinan en una armonía única.
-                    </p>
-                </div>
-                <div class="bloque-precio">
-                    <h3 class="precio">13€</h3>
-                    <input class="cantidad" type="number" placeholder="Cantidad" min="1">
-                    <input class="submit" type="submit" value="Agregar al carrito">
-                </div>
-            </div><!-- .bloque-producto -->
+            </div>
+        </div><!-- .bloque-producto -->
+        <div class="bloque-producto">
+            <img class="imagen-producto" src="build/img/brownies-choco.svg" alt="Brownie de chocolate">
+            <div class="producto-descripcion">
+                <h2>Brownie de chocolate</h2>
+                <p>
+                    El brownie de chocolate es una verdadera indulgencia para los amantes del chocolate. Con su exterior
+                    crujiente y su interior denso y lleno de sabor, cada mordisco es una explosión de chocolate puro.
+                    Este delicioso postre combina la riqueza del cacao con trozos de chocolate fundido, creando una
+                    experiencia irresistible para los sentidos. Su textura jugosa y su sabor intenso te transportarán a
+                    un paraíso chocolatoso. Puedes disfrutarlo solo, acompañado de una bola de helado o incluso con un
+                    toque de nueces o caramelo. El brownie de chocolate es el placer culpable perfecto para cualquier
+                    ocasión, desde una tarde de café hasta una celebración especial.
+                </p>
+            </div>
+            <div class="bloque-precio">
+                <h3 class="precio-producto">11.99€</h3>
+                <button class="agregar-carrito submit"
+                    data-producto='{"imagen": "build/img/brownies-choco.svg", "titulo": "Brownie de chocolate", "precio": "11.99€"}'>Añadir
+                    al carrito</button>
+            </div>
+        </div><!-- .bloque-producto -->
+        <div class="bloque-producto">
+            <img class="imagen-producto" src="build/img/Carmelitas-Feature-360x495.svg" alt="Carmelitas">
+            <div class="producto-descripcion">
+                <h2>Carmelitas</h2>
+                <p>
+                    Deliciosos y tentadores, nuestros brownies carmelitas son el sueño hecho realidad para los amantes
+                    del chocolate y el caramelo. Cada bocado te transporta a una experiencia celestial de sabor y
+                    textura. Nuestra receta especial combina una base de brownie de chocolate decadente y húmedo, con un
+                    relleno generoso de caramelo suave y cremoso que se derrite en tu boca. Para coronar esta maravilla,
+                    añadimos una capa crujiente de galleta en la parte superior, aportando un contraste perfecto de
+                    texturas. Cada mordisco es una explosión de sabores: el intenso chocolate, el dulce caramelo y el
+                    crujiente de la galleta se combinan en una armonía única.
+                </p>
+            </div>
+            <div class="bloque-precio">
+                <h3 class="precio-producto">14.99€</h3>
+                <button class="agregar-carrito submit"
+                    data-producto='{"imagen": "build/img/Carmelitas-Feature-360x495.svg", "titulo": "Carmelitas", "precio": "14.99€"}'>Añadir
+                    al carrito</button>
+            </div>
+        </div><!-- .bloque-producto -->
         </div>
     </main>
 
@@ -100,12 +126,69 @@
                     <p>+34 976 45 45 45</p>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </footer>
 
     <!-- Agrego modernizer para identificar si el pc soporta ciertas características como webp -->
     <script src="build/js/bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function agregarAlCarrito(e) {
+                const productoData = JSON.parse(e.target.getAttribute("data-producto"));
+                const producto = {
+                    imagen: productoData.imagen,
+                    titulo: productoData.titulo,
+                    precio: productoData.precio
+                };
+
+                // Obtener productos del carrito del almacenamiento local
+                let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+
+                // Verificar si el producto ya existe en el carrito
+                const productoExistenteIndex = productosCarrito.findIndex(item => item.titulo === producto.titulo);
+                if (productoExistenteIndex !== -1) {
+                    // Incrementar la cantidad del producto existente
+                    productosCarrito[productoExistenteIndex].cantidad += 1;
+                } else {
+                    // Agregar el producto al carrito
+                    producto.cantidad = 1;
+                    productosCarrito.push(producto);
+                }
+
+                // Guardar los productos actualizados en el almacenamiento local
+                localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+            }
+
+            function eliminarDelCarrito(e) {
+                const producto = e.target.getAttribute("data-producto");
+
+                // Obtener productos del carrito del almacenamiento local
+                let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+
+                // Filtrar los productos para eliminar el producto seleccionado
+                productosCarrito = productosCarrito.filter(item => item.titulo !== producto);
+
+                // Guardar los productos actualizados en el almacenamiento local
+                localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+
+                // Volver a cargar la página para refrescar el carrito
+                location.reload();
+            }
+
+            const botonesAgregar = document.querySelectorAll(".agregar-carrito");
+            botonesAgregar.forEach(function (boton) {
+                boton.addEventListener("click", agregarAlCarrito);
+            });
+
+            const botonesEliminar = document.querySelectorAll(".eliminar-producto");
+            botonesEliminar.forEach(function (boton) {
+                boton.addEventListener("click", eliminarDelCarrito);
+            });
+        });
+
+    </script>
 </body>
+
 </html>

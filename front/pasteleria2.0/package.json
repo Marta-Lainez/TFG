@@ -1,12 +1,12 @@
 {
-  "name": "bienesraices",
+  "name": "TFG",
   "version": "1.0.0",
-  "description": "Curso Desarrollo Web Completo",
+  "description": "Proyecto TFG",
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp"
   },
-  "author": "Juan De La Torre",
+  "author": "Marta Lainez Ramos",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^5.1.0",
