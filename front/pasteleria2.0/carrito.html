@@ -122,7 +122,7 @@
                         <div class="info-producto-carrito">
                             <h2>${titulo}</h2>
                             <span class="precio-producto-carrito">${precio}</span>
-                            <input type="number" class="cantidad-producto-carrito" min="0" value="${cantidad}">
+                            <input type="number" class="cantidad-producto-carrito" min="0" value="${cantidad}" data-titulo="${titulo}">
                         </div>
                         <button class="eliminar-producto submit" data-titulo="${titulo}">Eliminar</button>
                     `;
@@ -142,6 +142,11 @@
                 const botonesEliminar = document.querySelectorAll(".eliminar-producto");
                 botonesEliminar.forEach(function(boton) {
                     boton.addEventListener("click", eliminarProducto);
+                });
+
+                const cantidadesProducto = document.querySelectorAll(".cantidad-producto-carrito");
+                cantidadesProducto.forEach(function(input) {
+                    input.addEventListener("change", actualizarCantidad);
                 });
             }
 
